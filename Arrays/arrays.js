@@ -26,7 +26,7 @@ const newValue = grades.addGrade(20);
 const average = grades.calcGradeAverage();
 
 // 2. Store a set of words in an array and display the contents both forward and backward.
-const words = ["Masi", "Sisipho", "Khanyisile", "BetSoftware"];
+const words = ["Masi", "Cars", "Coding", "Software"];
 console.log(">>> Display Words Forward");
 for (var i = 0; i < words.length; i++) {
     console.log(words[i]);

@@ -115,5 +115,19 @@ console.log(displayPeople(people, "female"));
 // 4. Modify the video-rental kiosk program so that when a movie is checked out it is added
 // to a list of rented movies. Display this list whenever a customer checks out a movie.
 
+// Read Contents of File
+
+// Add Contents in Available Movie Array/Lists
+
+// Create Function To Remove Videos From Normal Array to Rented Movies Array
+
+// Display Available Movie && Rented Movies Array/Lists
+
+
+
 // 5. Create a check-in function for the video-rental kiosk program so that a returned movies
 // is deleted from the rented movies list and is added back to the available movies list.
+
+// Create Check In Fuction to Remove Movie From Rented Movies Array/List
+
+// Then Add Back Available Movie Array/Lists

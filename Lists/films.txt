@@ -1,20 +1,20 @@
-1. The Shawshank Redemption 
-2. The Godfather 
-3. The Godfather: Part II 
-4. Pulp Fiction 
-5. The Good, the Bad and the Ugly 
-6. 12 Angry Men 
-7. Schindler’s List 
-8. The Dark Knight 
-9. The Lord of the Rings: The Return of the King 
-10. Fight Club 
-11. Star Wars: Episode V - The Empire Strikes Back 
-12. One Flew Over the Cuckoo’s Nest
-13. The Lord of the Rings: The Fellowship of the Ring 
-14. Inception 
-15. Goodfellas 
-16. Star Wars 
-17. Seven Samurai 
-18. The Matrix 
-19. Forrest Gump 
-20. City of God
+The Shawshank Redemption
+The Godfather
+The Godfather: Part II
+Pulp Fiction
+The Good, the Bad and the Ugly
+12 Angry Men
+Schindler’s List
+The Dark Knight
+The Lord of the Rings: The Return of the King
+Fight Club
+Star Wars: Episode V - The Empire Strikes Back
+One Flew Over the Cuckoo’s Nest
+The Lord of the Rings: The Fellowship of the Ring
+Inception
+Goodfellas
+Star Wars
+Seven Samurai
+The Matrix
+Forrest Gump
+City of God

@@ -1,5 +1,4 @@
-// 1. Write a function that inserts an element into a list only if the element to be inserted is
-// larger than any of the elements currently in the list. Larger can mean either greater than
+// 1. Write a function that inserts an element into a list only if the element to be inserted is larger than any of the elements currently in the list. Larger can mean either greater than
 // when working with numeric values, or further down in the alphabet, when working with textual values.
 
 function insertIfLarger(list, elementToInsert) {
@@ -37,8 +36,7 @@ insertIfLarger(numbers, 40);
 const words = ["apple", "banana", "cherry"];
 insertIfLarger(words, "date");
 
-// 2. Write a function that inserts an element into a list only if the element to be inserted
-// is smaller than any of the elements currently in the list.
+// 2. Write a function that inserts an element into a list only if the element to be inserted is smaller than any of the elements currently in the list.
 
 function insertIfLess(list, elementToInsert) {
     if (list.length === 0) {
@@ -72,8 +70,7 @@ function insertIfLess(list, elementToInsert) {
 const digits = [10, 20, 30];
 insertIfLess(digits, 4);
 
-// 3. Create a Person class that stores a person’s name and their gender. Create a list of at least 10 Person objects.
-// Write a function that displays all the people in the list of the same gender.
+// 3. Create a Person class that stores a person’s name and their gender. Create a list of at least 10 Person objects. Write a function that displays all the people in the list of the same gender.
 class Person {
     constructor(name, gender) {
         this.name = name;
@@ -112,22 +109,74 @@ const people = [
 
 console.log(displayPeople(people, "female"));
 
-// 4. Modify the video-rental kiosk program so that when a movie is checked out it is added
-// to a list of rented movies. Display this list whenever a customer checks out a movie.
+// 4. Modify the video-rental kiosk program so that when a movie is checked out it is added to a list of rented movies. Display this list whenever a customer checks out a movie.
 
-// Read Contents of File
+const fs = require("fs");
+const movies = fs.readFileSync("films.txt", "utf8").split("\n");
+const movieList = [];
+const rentedMovieList = [];
 
-// Add Contents in Available Movie Array/Lists
+for (let i = 0; i < movies.length; ++i) {
+    movieList.push(movies[i]);
+}
 
-// Create Function To Remove Videos From Normal Array to Rented Movies Array
+const customers = [];
+class Customer {
+    constructor(name, movie) {
+        this.name = name;
+        this.movie = movie;
+    }
+}
 
-// Display Available Movie && Rented Movies Array/Lists
+function checkOut(name, movie, filmList, customerList) {
+    if (movieList.includes(movie)) {
+        let c = new Customer(name, movie);
+        customerList.push(c);
+        let index = filmList.indexOf(movie);
+        if (index > -1) {
+            filmList.splice(index, 1);
+        }
+        rentedMovieList.push(movie);
+    } else {
+        console.log(movie + " is not available.");
+    }
+}
 
+function displayList(list) {
+    for (let i = 0; i < list.length; i++) {
+        console.log(list[i]);
+    }
+}
 
+console.log("Available movies: \n");
+displayList(movieList);
+checkOut("Jane Doe", "The Godfather", movieList, customers);
+console.log("\nCustomer Rentals: \n");
+displayList(customers);
+console.log("\nMovies Now Available\n");
+displayList(movieList);
 
-// 5. Create a check-in function for the video-rental kiosk program so that a returned movies
-// is deleted from the rented movies list and is added back to the available movies list.
+// 5. Create a check-in function for the video-rental kiosk program so that a returned movies is deleted from the rented movies list and is added back to the available movies list.
 
-// Create Check In Fuction to Remove Movie From Rented Movies Array/List
+function checkIn(movie) {
+    if (rentedMovieList.includes(movie)) {
+        let index = rentedMovieList.indexOf(movie);
+        if (index > -1) {
+            rentedMovieList.splice(index, 1);
+        }
+        rentedMovieList.pop(index);
+        movieList.push(movie);
+    } else {
+        console.log(movie + " wasn't rented.");
+    }
 
-// Then Add Back Available Movie Array/Lists
+    customers.filter((item) => item.movie === movie);
+    console.log("Current Customer List: \n");
+    console.log(customers.map((fruit) => fruit.name));
+}
+
+console.log("Rented movies: \n");
+displayList(rentedMovieList);
+checkIn("The Godfather");
+console.log("Available movies: \n");
+displayList(movieList);
